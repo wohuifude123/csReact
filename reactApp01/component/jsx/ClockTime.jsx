@@ -1,6 +1,6 @@
 import React from 'react';
 
-class ClockC extends React.Component {
+class ClockTimeout extends React.Component {
     constructor(props) {
         super(props);
         this.state = { count: 0 };
@@ -24,4 +24,4 @@ class ClockC extends React.Component {
     }
 }
 
-export default ClockC;
+export default ClockTimeout;

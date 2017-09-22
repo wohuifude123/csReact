@@ -4,9 +4,9 @@ const webpack = require('webpack');
 var config  = {
     //此处指明路口文件位置
     entry: './main.js',   //设置入口文件
-    //配置打包结果，
-    //path配置定义了输出的文件位置
-    //filename则定义了打包结果文件的名称
+    // 配置打包结果，
+    // path配置定义了输出的文件位置
+    // filename则定义了打包结果文件的名称
     devtool: 'inline-source-map',
     output: {//输出目录
         filename: 'bundle.js',//设置导出文件为index.js
@@ -14,13 +14,21 @@ var config  = {
     },
     //设置本地服务器端口号为9001，此端口可以自己设定，但记住不能与其他服务端口重复
     devServer:{
-        //contentBase: './dist',//tell the dev server where to look for files
+        // 默认webpack-dev-server会为根文件夹提供本地服务器
+        // 如果想为另外一个目录下的文件提供本地服务器，应该在这里设置其所在目录
+        // contentBase: './dist',//tell the dev server where to look for files
+
+        // historyApiFallback: true, //不跳转
+
         hot: true,
         inline:true,
         port:7700
 
     },
-    plugins: [
+    // resolve:影响对模块的解析，一个对象
+        // extensions：自动补全识别后缀，是一个数组
+
+    plugins: [// 定义插件，一个数组
         new webpack.HotModuleReplacementPlugin()
     ],
     //定义了对模块的处理逻辑，这里可以用loaders定义一系列的加载器，以及一些正则，

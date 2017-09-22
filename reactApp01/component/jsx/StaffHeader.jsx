@@ -1,5 +1,5 @@
 import React from 'react';
-import ImgShow from './component/jsx/ImgShow.jsx';
+import ImgShow from './ImgShow.jsx';
 
 class StaffHeader extends React.Component{
     render(){
@@ -11,7 +11,7 @@ class StaffHeader extends React.Component{
                     <tr>
                         <td className="headerTd"><input type='text' placeholder='Search...' /></td>
                         <td className="headerTd">
-                            <label for='idSelect'>人员筛选</label>
+                            <label for='idSelect'>【人员筛选】</label>
                             <select id='idSelect'>
                                 <option value='0'>全部</option>
                                 <option value='1'>主任</option>
@@ -28,13 +28,10 @@ class StaffHeader extends React.Component{
                                 <option value='2'>年龄降</option>
                             </select>
                         </td>
-
-
-
                     </tr>
                     </tbody>
                 </table>
-                <ImgShow />
+                图片<ImgShow />
             </div>
         );
     }

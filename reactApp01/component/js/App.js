@@ -11,7 +11,7 @@ class App extends React.Component {
         super();
     }
     render() {
-        return React.createElement('div', null, `你的Hello123 ${this.props.name}`);
+        return React.createElement('div', null, `第一个Hello ${this.props.name}`);
     }
 }
 

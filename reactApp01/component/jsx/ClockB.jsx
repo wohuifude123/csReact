@@ -19,7 +19,7 @@ class ClockB extends React.Component {
     render() {
         return (
             <div>
-                <h1>Hello, world!qweasd</h1>
+                <h1>Hello, world!下面是时钟</h1>
                 <h2>It is {this.state.date.toLocaleTimeString()}.</h2>
             </div>
         );

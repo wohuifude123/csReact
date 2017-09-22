@@ -13,7 +13,9 @@ import Apa from './component/jsx/Apa.jsx';
 import ImgShow from './component/jsx/ImgShow.jsx';
 import Clock from './component/jsx/Ba.jsx';
 import ClockB from './component/jsx/ClockB.jsx';
-import ClockC from './component/jsx/ClockC.jsx';
+import ClockTimeout from './component/jsx/ClockTime.jsx';
+import StaffHeader from './component/jsx/StaffHeader.jsx';
+
 
 ReactDOM.render(<App name="John"/>,
     document.getElementById('app'))
@@ -25,9 +27,10 @@ ReactDOM.render(<Apa />,
     document.getElementById('app03'))
 ReactDOM.render(<ImgShow />,
     document.getElementById('app04'))
-ReactDOM.render(<Clock />,
-    document.getElementById('app05'))
+//ReactDOM.render(<Clock />, document.getElementById('app05'))
 ReactDOM.render(<ClockB />,
     document.getElementById('app06'))
-ReactDOM.render(<ClockC />,
+ReactDOM.render(<ClockTimeout />,
     document.getElementById('app07'))
+ReactDOM.render(<StaffHeader />,
+    document.getElementById('app08'))
