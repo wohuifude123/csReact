@@ -24,4 +24,4 @@ class GetGreeting extends React.Component {
 
 
 
-    export default GetGreeting;
+export default GetGreeting;

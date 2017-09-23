@@ -14,7 +14,7 @@ class FormatNameUse extends React.Component {
         super();
     }
     render() {
-        return React.createElement('h1', null, `小名字 ${formatName(user)}`);
+        return React.createElement('h1', null, `小名字 ${formatName(user)+" = "+this.props.name}`);
     }
 }
 

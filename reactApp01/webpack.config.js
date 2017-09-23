@@ -35,14 +35,30 @@ var config  = {
     //当需要加载的文件匹配test的正则时，会调用后面的loader对文件进行处理，
     //所以这就是webpack骚的可怕的地方。。。。。
     module:{
-        loaders:[{
-            test:/\.jsx?$/,
-            exclude:/node_modules/,
-            loader:'babel-loader',
-            query:{
-                presets:['es2015','react']
+        loaders:[
+        //rules:[
+            {
+                test:/\.jsx?$/,
+                exclude:/node_modules/,
+                loader:'babel-loader',
+                query:{
+                    presets:['es2015','react']
+                }
+            },
+            {
+                test: /\.css$/,
+                use: [
+                    'style-loader',
+                    'css-loader'
+                ]
+            },
+            {
+                test: /\.(png|svg|jpg|gif)$/,
+                use: [
+                    'file-loader'
+                ]
             }
-        }]
+        ]
     }
 };
 
