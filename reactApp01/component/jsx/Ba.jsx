@@ -1,5 +1,6 @@
 import React from 'react';
 
+/*
 const element = (
     <div>
         <h1>Hello, world!</h1>
@@ -8,13 +9,13 @@ const element = (
 );
 
 function tick() {
-    element
 }
 
 class Clock extends React.Component {
 
-    //setInterval(tick, 1000);
-    render() {
+    setInterval(tick, 1000);
+    render()
+    element{
         return (
             element
         );
@@ -22,4 +23,4 @@ class Clock extends React.Component {
 }
 export default Clock;
 
-
+*/

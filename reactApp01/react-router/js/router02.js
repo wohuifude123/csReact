@@ -4,8 +4,9 @@ import { Router, Route, hashHistory } from 'react-router'
 
 import About from '../component/About'
 import Repos from '../component/Repos'
+import App from '../component/App'
 
-class Router02 extends React.Component {
+class RouterApp extends React.Component {
     constructor() {
         super();
     }
@@ -21,4 +22,4 @@ class Router02 extends React.Component {
 
 }
 
-export default Router02;
+export default RouterApp;

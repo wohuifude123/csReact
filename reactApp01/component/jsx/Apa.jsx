@@ -38,9 +38,9 @@ const user_jpg = {
 
 // const element_jpg = <img src={user_jpg.avaUrl}></img>;
 
-const element_jpg_01 = (
+const element_jpg_01 = userGet => (
     <div>
-        <div className="hello" style={{backgroundColor:'lime'}}>new——陌生的访客, {formatName(userGet)}!</div>
+        <div className="hello" style={{backgroundColor:'lime'}}>new——陌生的访客，{formatName(userGet)}!</div>
         <img src={user_jpg.avaUrl}></img>
     </div>
 );
@@ -48,7 +48,7 @@ const element_jpg_01 = (
 
 function getGreeting(userGet) {
     if (userGet) {
-        return element_jpg_01;
+        return element_jpg_01(userGet);
     }
     return <div>Hello, 问一下</div>;
 }
@@ -64,8 +64,6 @@ const element_return = (
 
 
 class Apa extends React.Component {
-
-
     render() {
         return (
             element_return
