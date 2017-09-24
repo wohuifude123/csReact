@@ -27,7 +27,7 @@ import StaffHeader from './component/jsx/StaffHeader.jsx';
 import AppFormatName from './component/jsx/AppFormatName.jsx';
 
 // redux 部分
-import reduxIndex from './redux/reduxIndex.jsx';
+import renderCounter from './redux/renderCounter.jsx';
 
 
 
@@ -49,8 +49,9 @@ ReactDOM.render(
     document.getElementById('LikeButton01')
 );
 
-ReactDOM.render(<reduxIndex />,
-    document.getElementById('app012'))
+ReactDOM.render(<renderCounter />,
+    document.getElementById('app012')
+)
 
 
 ReactDOM.render(<GetGreeting />,

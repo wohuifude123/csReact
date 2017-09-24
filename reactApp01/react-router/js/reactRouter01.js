@@ -1,12 +1,12 @@
 import React from 'react';
 
 // For this demo, we are using the UMD build of react-router-dom
-const {
-    HashRouter,
+import {
+    BrowserRouter as Router,
     Switch,
     Route,
     Link
-} = ReactRouterDOM
+} from 'react-router-dom'
 
 // A simple data API that will be used to get the data for our
 // components. On a real website, a more robust data fetching
