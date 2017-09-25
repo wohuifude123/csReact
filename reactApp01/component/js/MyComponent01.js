@@ -1,6 +1,8 @@
 import React from 'react';
 
-let MyComponent01 = React.createClass({
+import createReactClass from 'create-react-class';
+let MyComponent01 = createReactClass({
+//let MyComponent01 = React.createClass({
     getInitialState: function() {
         return {clickNum: 0};
     },

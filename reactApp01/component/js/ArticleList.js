@@ -1,5 +1,4 @@
-class ArticleList extends React.component{
-
+class ArticleList extends React.Component {
     render() {
         /*
             let [foo, [[bar], baz]] = [1, [[2], 3]];

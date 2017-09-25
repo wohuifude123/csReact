@@ -1,6 +1,9 @@
 import React from 'react';
 
-var LikeButton = React.createClass({
+import createReactClass from 'create-react-class';
+
+//var LikeButton = React.createClass({
+let LikeButton = createReactClass({
     getInitialState: function() {
         return {liked: false};
     },

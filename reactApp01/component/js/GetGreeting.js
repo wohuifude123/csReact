@@ -13,15 +13,9 @@ class GetGreeting extends React.Component {
     constructor() {
         super();
     }
-
-
-        render() {
-            return React.createElement('div', null, ` 很大的名字 ${formatName(user)}`);
-        }
-
-
+    render() {
+        return React.createElement('div', null, ` 很大的名字 ${formatName(user)}`);
+    }
 }
-
-
 
 export default GetGreeting;

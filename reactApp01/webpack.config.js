@@ -38,7 +38,7 @@ var config  = {
 
     },
     // resolve:影响对模块的解析，一个对象
-        // extensions：自动补全识别后缀，是一个数组
+    // extensions：自动补全识别后缀，是一个数组
 
     plugins: [// 定义插件，一个数组
         // new UglifyJSPlugin(),
@@ -54,13 +54,14 @@ var config  = {
     //所以这就是webpack骚的可怕的地方。。。。。
     module:{
         loaders:[
-        //rules:[
+            //rules:[
             {
                 test:/\.jsx?$/,
                 exclude:/node_modules/,
                 loader:'babel-loader',
                 query:{
-                    presets:['es2015','react']
+                    // presets:['es2015','react']
+                    presets:['env', 'react', 'stage-0']
                 }
             },
             {
@@ -81,3 +82,5 @@ var config  = {
 };
 
 module.exports = config;
+
+

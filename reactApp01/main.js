@@ -13,7 +13,7 @@ import LikeButton from './component/js/LikeButton.js';
 import BasicExample from './react-router/js/BasicExample.js';
 // import AppRouter from './react-router/js/reactRouter01.js';
 // 路由
-import RouterApp from './react-router/js/router02.js';
+import RouterAppHash from './react-router/js/router02.js';
 
 // jsx 组件
 import Apa from './component/jsx/Apa.jsx';
@@ -27,7 +27,7 @@ import StaffHeader from './component/jsx/StaffHeader.jsx';
 import AppFormatName from './component/jsx/AppFormatName.jsx';
 
 // redux 部分
-import renderCounter from './redux/renderCounter.jsx';
+import RenderCounter from './redux/renderCounter.jsx';
 
 
 
@@ -49,7 +49,7 @@ ReactDOM.render(
     document.getElementById('LikeButton01')
 );
 
-ReactDOM.render(<renderCounter />,
+ReactDOM.render(<RenderCounter />,
     document.getElementById('app012')
 )
 
@@ -70,12 +70,16 @@ ReactDOM.render(<Apa />,
     document.getElementById('app03'))
 ReactDOM.render(<ImgShow />,
     document.getElementById('app04'))
+ReactDOM.render(<RouterAppHash />,
+    document.getElementById('appRouter'))
 //ReactDOM.render(<Clock />, document.getElementById('app05'))
 ReactDOM.render(<ClockB />,
     document.getElementById('app06'))
 ReactDOM.render(<ClockTimeout />,
     document.getElementById('app07'))
-ReactDOM.render(<RouterApp />,
-    document.getElementById('appRouter'))
+
+
+
 ReactDOM.render(<StaffHeader />,
     document.getElementById('app08'))
+

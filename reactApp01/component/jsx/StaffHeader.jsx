@@ -11,7 +11,7 @@ class StaffHeader extends React.Component{
                     <tr>
                         <td className="headerTd"><input type='text' placeholder='Search...' /></td>
                         <td className="headerTd">
-                            <label for='idSelect'>【人员筛选】</label>
+                            <label htmlFor='idSelect'>【人员筛选】</label>
                             <select id='idSelect'>
                                 <option value='0'>全部</option>
                                 <option value='1'>主任</option>
@@ -21,7 +21,7 @@ class StaffHeader extends React.Component{
                             </select>
                         </td>
                         <td>
-                            <label for='orderSelect'>排列方式</label>
+                            <label htmlFor='orderSelect'>排列方式</label>
                             <select id='orderSelect'>
                                 <option value='0'>身份</option>
                                 <option value='1'>年龄升</option>
