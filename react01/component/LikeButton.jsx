@@ -1,15 +1,24 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+
 
 class LikeButton extends React.Component {
     constructor(props) {
         super(props);
         this.state = { liked: false };
+        this.handleClick = this.handleClick.bind(this);
+
     }
+
     handleClick(event) {
+        /*
         const nextCount = !this.state.liked;
         this.setState({ liked: nextCount });
+        */
+        this.setState(prevState => ({
+            liked: !prevState.liked
+        }));
     }
+
     render() {
         var text = this.state.liked ? '喜欢' : '不喜欢';
         return (
@@ -25,7 +34,8 @@ class LikeButton extends React.Component {
 
                 从原来的函数和原来的对象创建一个绑定函数，则能很漂亮地解决这个问题
              */
-            <p onClick={this.handleClick.bind(this)}>
+            //<p onClick={this.handleClick.bind(this)}>
+            <p onClick={this.handleClick}>
                 你<b>{text}</b>我。点我切换状态。
             </p>
         );
