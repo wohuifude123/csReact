@@ -1,0 +1,1 @@
+{"version":3,"sources":["../../Router/App.js"],"names":["App","Component","About"],"mappings":";;;;;;AAAA;;;;;;;;;;;;IAEMA,G;;;;;;;;;;EAAY,gBAAMC,S;;kBAITC,K","file":"App.js","sourcesContent":["import React from 'react'\n\nclass App extends React.Component {\n    \n}\n\nexport default About;\n"]}
