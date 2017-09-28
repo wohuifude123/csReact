@@ -21,6 +21,11 @@ export default class AddTodo extends Component {
             </div>
         )
     }
+    /*
+        onAddClick={text =>
+            dispatch(addTodo(text))
+        } />
+     */
 
     handleClick(e) {
         const node = this.refs.input

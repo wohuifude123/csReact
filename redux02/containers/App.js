@@ -2,6 +2,7 @@ import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
 import { addTodo } from '../actions'
 import AddTodo from '../components/AddTodo'
+import TodoList from '../components/TodoList'
 
 /*
     let [x, y] = [1, 2, 3];
@@ -36,12 +37,18 @@ import AddTodo from '../components/AddTodo'
 // 点击按钮 发出了增加 text 的action请求
 class App extends Component {
     render() {
-        const { dispatch } = this.props
+
+        const { dispatch, visibleTodos } = this.props
         return (
             <div>
                 <AddTodo
                     onAddClick={text =>
                         dispatch(addTodo(text))
+                    } />
+                <TodoList
+                    todos={visibleTodos}
+                    onTodoClick={index =>
+                        dispatch(completeTodo(index))
                     } />
             </div>
         )
@@ -49,5 +56,5 @@ class App extends Component {
 }
 
 // 包装 component ，注入 dispatch 和 state 到其默认的 connect(select)(App) 中；
-export default App
 
+export default connect()(App);
