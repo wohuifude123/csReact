@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 // cnpm install --save-dev react-router@2.0.0
 
