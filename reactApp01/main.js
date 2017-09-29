@@ -18,7 +18,7 @@ import RouterAppHash from './react-router/js/router02.js';
 // jsx 组件
 import Apa from './component/jsx/Apa.jsx';
 import ImgShow from './component/jsx/ImgShow.jsx';
-import Clock from './component/jsx/Ba.jsx';
+import Clock from './component/jsx/Ba.Component.jsx';
 import ClockB from './component/jsx/ClockB.jsx';
 import ClockTimeout from './component/jsx/ClockTime.jsx';
 import StaffHeader from './component/jsx/StaffHeader.jsx';
@@ -29,7 +29,7 @@ import AppFormatName from './component/jsx/AppFormatName.jsx';
 // redux 部分
 import RenderCounter from './redux/renderCounter.jsx';
 
-
+import HelloMessage from './component/HelloMessage/HelloMessage.Component.js';
 
 
 //ReactDOM.render(<App name="John"/>,document.getElementById('app'))
@@ -72,14 +72,20 @@ ReactDOM.render(<ImgShow />,
     document.getElementById('app04'))
 ReactDOM.render(<RouterAppHash />,
     document.getElementById('appRouter'))
-//ReactDOM.render(<Clock />, document.getElementById('app05'))
+ReactDOM.render(<Clock />,
+    document.getElementById('app05'))
+
 ReactDOM.render(<ClockB />,
     document.getElementById('app06'))
 ReactDOM.render(<ClockTimeout />,
     document.getElementById('app07'))
 
-
+ReactDOM.render(<StaffHeader />,
+    document.getElementById('app08'))
 
 ReactDOM.render(<StaffHeader />,
     document.getElementById('app08'))
+
+ReactDOM.render(<HelloMessage />,
+    document.getElementById('HelloMessage'))
 
