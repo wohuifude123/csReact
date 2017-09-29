@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
-import { addTodo } from '../actions'
+import { addTodo, VisibilityFilters } from '../actions'
 import AddTodo from '../components/AddTodo'
 import TodoList from '../components/TodoList'
 
@@ -36,6 +36,7 @@ import TodoList from '../components/TodoList'
 
 // 点击按钮 发出了增加 text 的action请求
 class App extends Component {
+    // todos={visibleTodos} 采集 visibleTodos 数据
     render() {
 
         const { dispatch, visibleTodos } = this.props
@@ -47,14 +48,81 @@ class App extends Component {
                     } />
                 <TodoList
                     todos={visibleTodos}
-                    onTodoClick={index =>
-                        dispatch(completeTodo(index))
-                    } />
+                />
             </div>
         )
     }
 }
 
-// 包装 component ，注入 dispatch 和 state 到其默认的 connect(select)(App) 中；
 
-export default connect()(App);
+/*
+    {
+      visibilityFilter: 'SHOW_ALL',
+      todos: [
+        {
+          text: 'Consider using Redux',
+          completed: true,
+        },
+        {
+          text: 'Keep all state in a single tree',
+          completed: false
+        }
+      ]
+    }
+ */
+
+
+/*
+    使用 todos 方法，返回 state 数据，构建数据完毕
+    {
+        visibilityFilter: 'SHOW_ALL',
+        visibleTodos: [
+            {
+                text: 'Consider using Redux',
+                completed: true,
+            },
+            {
+                text: 'Keep all state in a single tree',
+                completed: false
+            }
+        ]
+    }
+ */
+
+// actions.js 中的 VisibilityFilters
+/*
+    selectTodos(state.todos, state.visibilityFilter)
+
+    state.visibilityFilter 等于 SHOW_ALL
+ */
+function selectTodos(todos, filter) {
+    switch (filter) {
+        case VisibilityFilters.SHOW_ALL:
+            return todos
+    }
+}
+
+/*
+    {
+        visibilityFilter: 'SHOW_ALL',
+        visibleTodos: [
+            selectTodos(state.todos, state.visibilityFilter)
+        ]
+    }
+
+ */
+
+// visibilityFilter
+
+
+
+// Which props do we want to inject, given the global state?
+function select(state) {
+    return {
+        visibleTodos: selectTodos(state.todos, state.visibilityFilter),
+        visibilityFilter: state.visibilityFilter
+    }
+}
+
+// 包装 component ，注入 dispatch 和 state 到其默认的 connect(select)(App) 中；
+export default connect(select)(App);

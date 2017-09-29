@@ -5,7 +5,7 @@ import { Provider } from 'react-redux'
 import App from './containers/App'
 import todoApp from './reducers'
 
-import WelcomeApp from './components/WelcomeApp.Component.js'
+
 
 /*
     import {firstName, lastName, year} from './profile';
@@ -39,10 +39,7 @@ let store = createStore(todoApp)
 
 let rootElement = document.getElementById('root')
 
-render(
-    <WelcomeApp />,
-    document.getElementById('WelcomeApp')
-)
+
 
 render(
     <Provider store={store}>

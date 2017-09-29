@@ -1,4 +1,5 @@
-import React, { Component, PropTypes } from 'react'
+import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 import { ADD_TODO, COMPLETE_TODO, SET_VISIBILITY_FILTER, VisibilityFilters } from '../actions'
 import { connect } from 'react-redux'
 
@@ -25,6 +26,12 @@ export default class AddTodo extends Component {
         onAddClick={text =>
             dispatch(addTodo(text))
         } />
+
+        执行这个属性中的函数
+
+        与普通的组件不同
+
+        父元素需要 text => dispatch(addTodo(text))
      */
 
     handleClick(e) {

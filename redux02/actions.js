@@ -3,7 +3,10 @@
  */
 
 // 是为了后面在 reducer中可以匹配到对应到 type
-export const ADD_TODO = 'ADD_TODO';
+export const ADD_TODO = 'ADD_TODO'; // 添加
+
+//
+export const SET_VISIBILITY_FILTER = 'SET_VISIBILITY_FILTER' // 设置可见度过滤
 
 /*
  * 其它的常量
@@ -22,6 +25,11 @@ export const VisibilityFilters = {
 // 暴露出这个方法，其他地方可以调用这个方法去触发这个 action
 export function addTodo(text) {
     return { type: ADD_TODO, text }
+}
+
+
+export function setVisibilityFilter(filter) {
+    return { type: SET_VISIBILITY_FILTER, filter }
 }
 
 /*

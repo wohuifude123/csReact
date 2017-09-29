@@ -2,6 +2,7 @@ import React, { Component, PropTypes } from 'react'
 import Todo from './Todo'
 
 /*
+
     (todo, index) =>
         <Todo {...todo}
             key={index}
@@ -29,23 +30,51 @@ import Todo from './Todo'
 
 
 export default class TodoList extends Component {
+    /*
+        function ListItem(props) {
+            // Correct 正确的 ! There is no need to specify the key here:
+            return <li>{props.value}</li>;
+        }
+
+        const listItems = numbers.map((number) =>
+        // Correct! Key should be specified inside the array.
+            <ListItem key={number.toString()}
+                value={number} />
+        );
+     */
+
+    /*
+
+        数据格式
+        {
+            text: action.text1,
+            completed: false
+        },
+        {
+            text: action.text2,
+            completed: false
+        },
+        {
+            text: action.text3,
+            completed: false
+        }
+
+     */
+
+    /*
+        遍历父元素的 this.props.todos
+     */
     render() {
         return (
             <ul>
                 {this.props.todos.map((todo, index) =>
                     <Todo {...todo}
                           key={index}
-                          onClick={() => this.props.onTodoClick(index)} />
+                         />
                 )}
             </ul>
         )
     }
 }
 
-TodoList.propTypes = {
-    onTodoClick: PropTypes.func.isRequired,
-    todos: PropTypes.arrayOf(PropTypes.shape({
-        text: PropTypes.string.isRequired,
-        completed: PropTypes.bool.isRequired
-    }).isRequired).isRequired
-}
+
