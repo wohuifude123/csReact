@@ -64,14 +64,23 @@ export default class TodoList extends Component {
     /*
         遍历父元素的 this.props.todos
      */
+
+    /*
+        this.props.todos.map((todo, index) =>
+            <Todo {...todo}
+                key={index}
+                    />)
+
+     */
     render() {
         return (
             <ul>
-                {this.props.todos.map((todo, index) =>
-                    <Todo {...todo}
-                          key={index}
-                         />
-                )}
+                {
+                    this.props.todos&&Array.isArray(this.props.todos)&&this.props.todos.map(()=>{
+                        <Todo {...todo}
+                              key={index}
+                            />})
+                }
             </ul>
         )
     }
