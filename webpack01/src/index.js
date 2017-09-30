@@ -32,10 +32,6 @@ if (module.hot) {
 }
 
 
-if (module.hot) {
-    module.hot.accept('./print.js', function() {
-        console.log('接收 the updated printMe module!');
-        printMe();
-    })
-}
+
+
 

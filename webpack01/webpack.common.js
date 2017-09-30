@@ -1,5 +1,4 @@
 const path = require('path');
-
 // HtmlWebpackPlugin 还是会默认生成 index.html 文件。
 // 这就是说，它会用新生成的 index.html 文件，把我们的原来的替换。
 const HtmlWebpackPlugin = require('html-webpack-plugin');
@@ -15,13 +14,6 @@ module.exports = {
         // print: './src/print.js'
         app: './src/index.js'
     },
-    devtool: 'inline-source-map',
-    // 修改配置文件，告诉开发服务器（dev server）在哪里查找文件
-    devServer: {
-        contentBase: './dist',
-        hot: true // 服务器热加载
-
-    },
     module: {
         rules: [
             {
@@ -31,12 +23,13 @@ module.exports = {
         ]
     },
     plugins: [
-        // new CleanWebpackPlugin(['dist']),
+        new CleanWebpackPlugin(['dist']),
         new HtmlWebpackPlugin({
-            title: 'Hot Module Replacement'
+            title: 'Production'
         }),
         new webpack.HotModuleReplacementPlugin() // 热加载的插件
     ],
+    // 修改配置文件，告诉开发服务器（dev server）在哪里查找文件
     output: {
         filename: '[name].bundle.js',
         path: path.resolve(__dirname, 'dist')
