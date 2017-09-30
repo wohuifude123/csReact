@@ -13,7 +13,7 @@ class HelloMessage extends React.Component {
 
     handClick(event) {
 
-        var tipE=ReactDOM.findDOMNode(this.refs.tip)
+        let tipE=ReactDOM.findDOMNode(this.refs.tip)
         if(tipE.style.display==="none"){
             tipE.style.display="inline"
         }else{
@@ -43,7 +43,7 @@ class HelloMessage extends React.Component {
     render () {
         return (
             <div>
-                <button onClick={this.handClick}>显示|隐藏</button>
+                <button onClick={this.handClick.bind(this)}>显示|隐藏</button>
                 <span ref="tip">测试显示隐藏</span>
             </div>
         );

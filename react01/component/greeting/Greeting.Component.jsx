@@ -36,7 +36,8 @@ class Greeting extends React.Component {
 
         return (
             <div>
-                <GreetingWelcome isLoggedIn={true} />
+                {/*<GreetingWelcome isLoggedIn={true} />*/}
+                {<GreetingWelcome isLoggedIn={false} />}
                 {button}
             </div>
         );

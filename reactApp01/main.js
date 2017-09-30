@@ -18,7 +18,7 @@ import RouterAppHash from './react-router/js/router02.js';
 // jsx 组件
 import Apa from './component/jsx/Apa.jsx';
 import ImgShow from './component/jsx/ImgShow.jsx';
-import Clock from './component/jsx/Ba.Component.jsx';
+
 import ClockB from './component/jsx/ClockB.jsx';
 import ClockTimeout from './component/jsx/ClockTime.jsx';
 import StaffHeader from './component/jsx/StaffHeader.jsx';
@@ -31,6 +31,16 @@ import RenderCounter from './redux/renderCounter.jsx';
 
 import HelloMessage from './component/HelloMessage/HelloMessage.Component.js';
 
+// 时间
+import Timer from './component/Timer/Timer.Component.js';
+
+// 自己制作时间组件
+import Clock from './component/jsx/Ba.Component.jsx';
+
+import Person from './component/js/Person.Component.js';
+
+// 9月30日 开始自己开发组件
+import Schedule from './component/schedule/Schedule.Component.js';
 
 //ReactDOM.render(<App name="John"/>,document.getElementById('app'))
 //ReactDOM.render(<FormatNameUse name="John"/>, document.getElementById('app01'))
@@ -89,3 +99,11 @@ ReactDOM.render(<StaffHeader />,
 ReactDOM.render(<HelloMessage />,
     document.getElementById('HelloMessage'))
 
+ReactDOM.render(<Timer />,
+    document.getElementById('Timer'))
+
+ReactDOM.render(<Person />,
+    document.getElementById('Person'))
+
+ReactDOM.render(<Schedule />,
+    document.getElementById('Schedule'))

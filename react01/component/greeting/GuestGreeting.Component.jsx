@@ -5,7 +5,7 @@ class GuestGreeting extends React.Component {
         super(props);
     }
     render(){
-        return <h1>Please sign up.</h1>;
+        return <h1>Please 登录</h1>;
     }
 
 }

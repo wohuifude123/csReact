@@ -66,20 +66,20 @@ export default class TodoList extends Component {
      */
 
     /*
-        this.props.todos.map((todo, index) =>
-            <Todo {...todo}
-                key={index}
-                    />)
+        <Todo {...todo} key = {index} />
+        这是es6的语法：拓展语句，简单说就是把todo展开，等效于下面的写法
+
+        <Todo text={todo.text} completed={todo.completed} key = {index} />
 
      */
     render() {
         return (
             <ul>
                 {
-                    this.props.todos&&Array.isArray(this.props.todos)&&this.props.todos.map(()=>{
+                    this.props.todos.map((todo, index) =>
                         <Todo {...todo}
                               key={index}
-                            />})
+                        />)
                 }
             </ul>
         )

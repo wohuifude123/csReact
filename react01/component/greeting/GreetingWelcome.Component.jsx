@@ -10,20 +10,27 @@ class GreetingWelcome extends React.Component {
     constructor(props) {
         super(props);
 
-        const isLoggedIn_const = this.props.isLoggedIn;
+        this.isLoggedIn_const = this.props.isLoggedIn;
 
-        const messages = ['React', 'Re: React', 'Re:Re: React'];
+        this.messages = ['React', 'Re: React', 'Re:Re: React'];
 
     }
 
     render(){
 
-        const unreadMessages = messages;
+        const unreadMessages = this.messages;
 
         if (this.isLoggedIn_const) {
             //if (this.props.isLoggedIn) {
             return (
                 <div>
+                    <h1>{this.isLoggedIn_const.toLocaleString()}</h1>
+                    {
+                        unreadMessages.length > 0 &&
+                        <h2>
+                            You have {unreadMessages.length} 读了的 messages.
+                        </h2>
+                    }
                     <h1>正确</h1>
                     <UserGreeting />
                 </div>
@@ -31,11 +38,12 @@ class GreetingWelcome extends React.Component {
         } else {
             return (
                 <div>
-                    <h1>Hello!</h1>
-                    {unreadMessages.length > 0 &&
-                    <h2>
-                        You have {unreadMessages.length} unread messages.
-                    </h2>
+                    <h1>{this.isLoggedIn_const.toLocaleString()}</h1>
+                    {
+                        unreadMessages.length > 0 &&
+                        <h2>
+                            You have {unreadMessages.length} unread messages.
+                        </h2>
                     }
                     <h1>错误</h1>
                     <GuestGreeting />

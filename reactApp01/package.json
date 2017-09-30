@@ -2,6 +2,7 @@
   "dependencies": {
     "babel-core": "^6.26.0",
     "lodash": "^4.17.4",
+    "prop-types": "^15.6.0",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
     "react-redux": "^5.0.6",
@@ -37,7 +38,7 @@
     "build": "webpack",
     "watch": "webpack --watch",
     "start": "webpack-dev-server --hot --inline"
-},
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",

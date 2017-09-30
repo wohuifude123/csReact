@@ -5,8 +5,8 @@
 // 是为了后面在 reducer中可以匹配到对应到 type
 export const ADD_TODO = 'ADD_TODO'; // 添加
 
-//
-export const SET_VISIBILITY_FILTER = 'SET_VISIBILITY_FILTER' // 设置可见度过滤
+// 设置可见度过滤
+export const SET_VISIBILITY_FILTER = 'SET_VISIBILITY_FILTER'
 
 /*
  * 其它的常量
@@ -23,6 +23,8 @@ export const VisibilityFilters = {
  */
 
 // 暴露出这个方法，其他地方可以调用这个方法去触发这个 action
+
+// 接收到添加的请求，去找 reducers 实现
 export function addTodo(text) {
     return { type: ADD_TODO, text }
 }
