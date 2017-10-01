@@ -1,17 +1,27 @@
 import _ from 'lodash';
-import printMe from './print.js';
+// import printMe from './print.js';
 import './styles.css';
 
 function component() {
     var element = document.createElement('div');
     var btn = document.createElement('button');
+    var br = document.createElement('br');
 
     element.innerHTML = _.join(['Hello', 'webpack'], ' ');
 
     btn.innerHTML = '点击并且检测输出';
     btn.onclick = printMe;
 
+    element.appendChild(br);
     element.appendChild(btn);
+
+    // Note that because a network request is involved, some indication
+    // of loading would need to be shown in a production-level site/app
+
+    btn.onclick = e => import(/* webpackChunkName: "print" */ './print').then(module => {
+        var print = module.default;
+        printMe();
+    });
 
     return element;
 }
@@ -30,8 +40,6 @@ if (module.hot) {
         document.body.appendChild(element);
     })
 }
-
-
 
 
 
