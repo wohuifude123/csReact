@@ -1,5 +1,5 @@
 import _ from 'lodash';
-// import printMe from './print.js';
+//import printMe from './print.js';
 import './styles.css';
 
 function component() {
@@ -10,7 +10,7 @@ function component() {
     element.innerHTML = _.join(['Hello', 'webpack'], ' ');
 
     btn.innerHTML = '点击并且检测输出';
-    btn.onclick = printMe;
+    // btn.onclick = printMe; // 这个需要注释掉，否则跟下面的懒加载冲突
 
     element.appendChild(br);
     element.appendChild(btn);
@@ -18,10 +18,16 @@ function component() {
     // Note that because a network request is involved, some indication
     // of loading would need to be shown in a production-level site/app
 
+
     btn.onclick = e => import(/* webpackChunkName: "print" */ './print').then(module => {
-        var print = module.default;
+        var printMe = module.default;
         printMe();
     });
+
+    //btn.onclick = e => import(/* webpackChunkName: "print" */ './print').then(module => {
+    //    var print = module.default;
+    //    print();
+    //});
 
     return element;
 }
@@ -40,6 +46,9 @@ if (module.hot) {
         document.body.appendChild(element);
     })
 }
+
+
+
 
 
 

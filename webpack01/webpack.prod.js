@@ -18,10 +18,20 @@ const common = require('./webpack.common.js');
 
     对于本指南，我们将在生产环境中使用 source-map 选项，而不是我们在开发环境中用到的 inline-source-map
  */
+
+/*
+    在生产环境中，我们的目标则转向于关注更小的 bundle，更轻量的 source map，以及更优化的资源，以改善加载时间。
+*/
 module.exports = merge(common, {
+    /*
+        我们鼓励你在生产环境中启用 source map，因为它们对调试源码（debug）和运行基准测试（benchmark tests）很有帮助。
+        虽然有如此强大的功能，然而还是应该针对生成环境用途，选择一个构建快速的推荐配置。
+        对于本指南，我们将在生产环境中使用 source-map 选项，而不是我们在开发环境中用到的 inline-source-map
+     */
     devtool: 'source-map',
     plugins: [
-        //new UglifyJSPlugin()
+        // new UglifyJSPlugin()
+        // 能够删除未引用代码（dead code）的压缩工具 UglifyJSPlugin
         new UglifyJSPlugin({
             sourceMap: true
         })

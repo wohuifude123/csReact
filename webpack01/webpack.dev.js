@@ -22,6 +22,12 @@ const common = require('./webpack.common.js');
     npm install --save-dev webpack-merge
  */
 
+/*
+
+    在开发环境中，我们需要具有强大的、具有实时重新加载（live reloading）
+    或热模块替换（ hot module replacement ）能力的 source map 和 localhost server
+
+ */
 module.exports = merge(common, {
     devtool: 'inline-source-map',
     // 修改配置文件，告诉开发服务器（dev server）在哪里查找文件
