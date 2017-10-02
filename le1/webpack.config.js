@@ -13,18 +13,35 @@ module.exports = {
         rules: [
             {
                 test: /\.less$/,
-                loader: ExtractTextPlugin.extract({
-                    fallback: 'style-loader',
-                    use: 'css-loader!less-loader'
-                })
+                use: [
+                    'style-loader',
+                    'css-loader',
+                    'less-loader',
+                ]
             }
         ]
+            /*
+            {
+                test: /\.less$/,
+                loader: ExtractTextPlugin.extract({
+                    // fallback: 'style-loader',
+                    // use: 'css-loader!less-loader'
+                    use: [
+                        'style-loader',
+                        'less-loader'
+                    ]
+                })
+            }
+            */
     },
+    /*
+    // 生成 index.html 文件
     plugins:[
         new HtmlWebpackPlugin({
             title: 'Development'
         })
     ],
+    */
     output: {
         filename: '[name].bundle.js',
         path: path.resolve(__dirname, 'dist')
